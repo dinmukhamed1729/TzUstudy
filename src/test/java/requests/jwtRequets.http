@@ -1,0 +1,74 @@
+POST localhost:8080/auth
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "pass"
+}
+
+
+###
+POST localhost:8080/auth
+Content-Type: application/json
+
+{
+  "username": "newUser21",
+  "password": "pass"
+}
+
+
+
+###
+GET localhost:8080/api/v1/secured
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsInJvbGVzIjpbXSwiZXhwIjoxNzMzNDgzNDMwLCJpYXQiOjE3MzM0ODE2MzB9.gxWbBLP7BKW2pBz0OsMqtSyBUcTJo2e0aqU3s6tRIEs
+
+
+###
+GET localhost:8080/api/v1/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsInJvbGVzIjpbXSwiZXhwIjoxNzMzNDgzNDMwLCJpYXQiOjE3MzM0ODE2MzB9.gxWbBLP7BKW2pBz0OsMqtSyBUcTJo2e0aqU3s6tRIEs
+
+
+###
+POST localhost:8080/registration
+Content-Type: application/json
+
+{
+  "username": "newUser21",
+  "password": "pass",
+  "confirmPassword": "pass",
+  "email":"email"
+}
+
+###
+POST http://localhost:8080/sensors/registration
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsInJvbGVzIjpbXSwiZXhwIjoxNzMzNDk3MzYzLCJpYXQiOjE3MzM0OTU1NjN9.2pbMpiKrDZ_KvxjyGS6tm_8JjV-2K6mfh5Bi242GpIc
+
+{
+  "name": "sensor3"
+}
+
+
+###
+POST http://localhost:8080/measurements/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsInJvbGVzIjpbXSwiZXhwIjoxNzMzNDk3MzYzLCJpYXQiOjE3MzM0OTU1NjN9.2pbMpiKrDZ_KvxjyGS6tm_8JjV-2K6mfh5Bi242GpIc
+
+{
+  "value": 433,
+  "raining": true,
+  "sensor": {
+    "name": "sensor1"
+  }
+}
+
+###
+GET localhost:8080/measurements
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsInJvbGVzIjpbXSwiZXhwIjoxNzMzNDk3MzYzLCJpYXQiOjE3MzM0OTU1NjN9.2pbMpiKrDZ_KvxjyGS6tm_8JjV-2K6mfh5Bi242GpIc
+
+
+###
+GET localhost:8080/measurements/rainyDaysCount
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsInJvbGVzIjpbXSwiZXhwIjoxNzMzNDk3MzYzLCJpYXQiOjE3MzM0OTU1NjN9.2pbMpiKrDZ_KvxjyGS6tm_8JjV-2K6mfh5Bi242GpIc
